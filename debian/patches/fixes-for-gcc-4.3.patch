@@ -1,0 +1,96 @@
+Description: Include standard headers to declare memcmp and memset
+Author: Francesco Namuri <francesco@namuri.it>
+Bug-Debian: https://bugs.debian.org/486954
+Forwarded: not-needed
+Last-Update: 2008-06-19
+
+--- a/src/babylon.cpp
++++ b/src/babylon.cpp
+@@ -22,6 +22,7 @@
+ 
+ #include<stdlib.h>
+ #include<stdio.h>
++#include<cstring>
+ 
+ #include <iconv.h>
+ 
+--- a/src/dictdbuilder.cpp
++++ b/src/dictdbuilder.cpp
+@@ -19,7 +19,7 @@
+  ***************************************************************************/
+ 
+ #include "dictdbuilder.h"
+-
++#include <cstring>
+ #include <iostream>
+ 
+ DictdBuilder::DictdBuilder( std::string filename )
+--- a/src/dictdbuilder.h
++++ b/src/dictdbuilder.h
+@@ -22,6 +22,8 @@
+ 
+ #include "dictbuilder.h"
+ 
++#include <sys/types.h>
++
+ #include <map>
+ #include <fstream>
+ 
+--- a/src/plaintextdictbuilder.h
++++ b/src/plaintextdictbuilder.h
+@@ -23,6 +23,8 @@
+ 
+ #include "dictbuilder.h"
+ 
++#include <sys/types.h>
++
+ #include <fstream>
+ #include <map>
+ 
+--- a/src/sdict.h
++++ b/src/sdict.h
+@@ -24,6 +24,8 @@
+ #include <fstream>
+ #include <vector>
+ 
++#include <sys/types.h>
++
+ using namespace std;
+ 
+ typedef unsigned char uchar;
+--- a/src/stardictbuilder.h
++++ b/src/stardictbuilder.h
+@@ -25,6 +25,8 @@
+ #include <map>
+ #include <fstream>
+ 
++#include <cstdlib>
++
+ class StarDictBuilder : public DictBuilder
+ {
+ 
+--- a/src/stardict.cpp
++++ b/src/stardict.cpp
+@@ -21,6 +21,11 @@
+ 
+ #include <zlib.h>
+ 
++#include <cstring>
++
++#include <cstdlib>
++
++
+ #define CHUNK 0xffffL
+ 
+ StarDict::StarDict( const char *filename )
+--- a/src/stardict.h
++++ b/src/stardict.h
+@@ -24,6 +24,8 @@
+ #include <fstream>
+ #include <vector>
+ 
++#include <sys/types.h>
++
+ using namespace std;
+ 
+ /**

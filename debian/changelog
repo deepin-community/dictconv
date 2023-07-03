@@ -1,5 +1,83 @@
-template-repository (1.0-1) unstable; urgency=medium
+dictconv (0.2-7.2) unstable; urgency=medium
 
-  * Initial release
+  * Non-maintainer upload.
+  * Switch to source format "3.0 (quilt)" (Closes: #1007290).
+  * Switch from 'cdbs' to the 'dh' build system.
+  * Use pkg-config to find libxml2 (Closes: #949092).
+  * debian/changelog: Trim trailing whitespace.
+  * debian/control:
+    - Use debhelper-compat v13.
+    - Build-Depend on pkg-config.
+    - Remove cdbs, autotools-dev and patchutils from the Build-Depends list.
+    - Raise Standards-Version to 4.6.0 from 3.8.0 (no changes needed).
+    - Declare Rules-Requires-Root: no.
+    - Fix grammatical errors in the package description.
+  * debian/copyright: Use DEP-5 format and update for 2022.
+  * debian/patches: Add DEP-3 metadata to fixes-for-gcc-4.3.patch.
+  * debian/watch: Use version 4.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Hugh McMaster <hugh.mcmaster@outlook.com>  Tue, 05 Apr 2022 12:51:27 +1000
+
+dictconv (0.2-7.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/compat: 5 -> 7. (Closes: #965491)
+  * Spelling fix in the package description. (Closes: #581630)
+
+ -- Adrian Bunk <bunk@debian.org>  Wed, 19 Jan 2022 16:23:08 +0200
+
+dictconv (0.2-7) unstable; urgency=low
+
+  * debian/rules: added simple-patchsys include.
+  * added debian/patches/fixes-for-gcc-4.3.patch to solve compilation problems
+    with gcc-4.3. (Closes: #486954)
+  * debian/control: added build-dep on patchutils.
+  * debian/control: Updated Standards-Version to 3.8.0, no modifications
+    needed.
+
+ -- Francesco Namuri <francesco@namuri.it>  Thu, 19 Jun 2008 15:00:42 +0200
+
+dictconv (0.2-6) unstable; urgency=low
+
+  * Fixed the original tarball (in the previous version I' ve made a wrong
+    conversion from bz2 to gz). thanks to Nelson A. de Oliveira.
+  * debian/control: fixed the long description, added recommend on dictzip.
+
+ -- Francesco Namuri <francesco@namuri.it>  Tue, 03 Jun 2008 23:52:50 +0200
+
+dictconv (0.2-5) unstable; urgency=low
+
+  * debian/control: changed priority from extra to optional.
+
+ -- Francesco Namuri <francesco@namuri.it>  Sun, 10 Feb 2008 13:01:41 +0100
+
+dictconv (0.2-4) unstable; urgency=low
+
+  * remove useless debian/dirs.
+  * debian/control: updated Standards-Version to 3.7.3.
+
+ -- Francesco Namuri <francesco@namuri.it>  Sat, 09 Feb 2008 13:50:50 +0100
+
+dictconv (0.2-3) unstable; urgency=low
+
+  * debian/copyright: added information about Karl Grill.
+  * debian/menu: removed because useless (this is a non interactive
+    application)
+
+ -- Francesco Namuri <francesco@namuri.it>  Fri, 23 Nov 2007 12:41:44 +0100
+
+dictconv (0.2-2) unstable; urgency=low
+
+  * debian/watch, debian/rules: removed uneeded blank lines.
+  * debian/control: moved "Homepage:" from description to new dpkg field,
+    fixed typos.
+  * debian/dictconv.1: fixed NAME section.
+  * debian/copyright: fixed typos.
+
+ -- Francesco Namuri <francesco@namuri.it>  Tue, 09 Oct 2007 11:11:25 +0200
+
+dictconv (0.2-1) unstable; urgency=low
+
+  * Initial release. (Closes: #435814)
+
+ -- Francesco Namuri <francesco@namuri.it>  Sat, 21 Jul 2007 17:41:30 +0200
